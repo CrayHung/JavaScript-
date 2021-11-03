@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        div{
+            border: 1px black solid;
+            width: fit-content;
+        }
+        li{
+            display: inline;
+            background-color: aqua;
+            
+        }
+        button{
+            width: 200px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            /*當按下btn1時 , 觸發onclick*/
+            // var btn1 = document.getElementById("btn1");
+            // btn1.onclick = function(){
+                /*查找bj節點*/
+                // var bj = document.getElementById("bj");
+                // alert(bj.innerHTML);
+            //};
+
+
+
+            /*當按下btn2時 , 觸發onclick*/
+            // var btn2 = document.getElementById("btn2");
+            // btn2.onclick = function(){
+            /*查找所有li節點 , li為一個類array*/
+            // var li = document.getElementsByTagName("li");
+            // for(var i =0;i<li.length;i++)
+                // {
+                // alert(li[i].innerHTML);
+                // }
+            // };
+
+
+            /*當按下btn3時 , 觸發onclick*/
+            var btn3 = document.getElementById("btn3");
+            btn3.onclick = function(){
+            var list = document.getElementsByName("gender");
+            
+            for(var i=0;i<list.length;i++)
+                {
+                    alert(list[i].value);
+                }
+            }
+
+
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <div id="total">
+        <div class="inner">
+            <p>你喜歡哪個城市?</p>
+            <ul id="city">
+                <div><li id="bj">北京</li></div>
+                <div><li >上海</li></div>
+                <div><li >東京</li></div>
+                <div><li >首爾</li></div>
+            </ul>
+            <br>
+            <br>
+    
+            <p>手機?</p>
+            <ul id="phone">
+                <div><li id="IOS">IOS</li></div>
+                <div><li id="android">Andriod</li></div>
+            </ul>
+        </div>
+    
+        <div class="inner">
+            <p>gender</p>
+            <input type="radio" name="gender" value="male">male
+            <input type="radio" name="gender" value="female" >female
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcd">
+        </div>
+    </div>
+    
+    <div><button id="btn1">查找bj節點</button></div>
+    <div><button id="btn2">查找li所有節點</button></div>
+    <div><button id="btn3">查找name=gender的所有節點</button></div>
+    <div><button id="btn4">查找city下的所有li節點</button></div>
+    <div><button id="btn5">查找city的所有子節點</button></div>
+    <div><button id="btn6">返回phone的第一個節點</button></div>
+    <div><button id="btn7">返回bj的父節點</button></div>
+    <div><button id="btn8">返回#android的前一個節點</button></div>
+    <div><button id="btn9">讀取username的value屬性值</button></div>
+    <div><button id="btn10">設置username的value屬性值</button></div>
+    <div><button id="btn11">返回bj的文本值</button></div>
+    
+    </body>

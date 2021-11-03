@@ -1,0 +1,23 @@
+<html>
+<head></head>
+<body>
+
+
+<script>
+
+var name="全局的name";
+
+obj = {
+	name:"對象的name",
+    sayName:fun		
+};
+
+function fun(){
+	console.log(this.name);
+}
+fun();
+obj.sayName();	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #outer{
+                width: 275px;
+                height: 183px;
+                margin: 50px auto;
+                padding: 10px;
+                background-color: chartreuse;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            window.onload=function(){
+                //點按鈕切換圖片
+                //1.獲取按鈕id , 按下按鈕觸發事件
+                var prev = document.getElementById("prev");
+                var next = document.getElementById("next");
+                //2.要切換圖片就是要修改img標籤裡面的src屬性
+                var img = document.getElementById("jpg");
+
+                //3.創建一個array存所有照片的路徑
+                var imgArray = ["狗1.jpg","狗2.jpg","狗3.jpg"];
+                //4.創建一個索引(index)保存目前顯示的照片索引
+                var index = 0;
+                //5.判斷index<0 或大於array.length , 如果超過就設定index值
+
+                //6.設置提示文字  一共n張照片 , 目前第n張
+                var info = document.getElementById("info");
+                info.innerHTML = "一共"+imgArray.length+"張照片 , 目前第"+(index+1)+"張";
+                
+                prev.onclick=function(){
+                    index--;    //往上一張切換, 代表索引值-1
+                    if(index<0)
+                        index = imgArray.length-1;
+                    if(index>imgArray.length-1)
+                        index = 0;
+                    img.src = imgArray[index];
+                    info.innerHTML = "一共"+imgArray.length+"張照片 , 目前第"+(index+1)+"張";
+                }
+
+                next.onclick=function(){
+                    index++;    //往下一張切換, 代表索引值+1
+                    if(index<0)
+                        index = imgArray.length-1;
+                    if(index>imgArray.length-1)
+                        index = 0;
+                    img.src = imgArray[index];
+                    info.innerHTML = "一共"+imgArray.length+"張照片 , 目前第"+(index+1)+"張";
+                }
+
+            }
+        </script>
+
+    </head>
+    
+    <body>
+    <div id="outer">
+        <p id="info">一共張照片 , 目前第張</p>
+        <img id="jpg" src="狗1.jpg">
+        
+        <button id="prev">上一張</button>
+        <button id="next">下一張</button>
+    </div>
+    </body>
+</html>

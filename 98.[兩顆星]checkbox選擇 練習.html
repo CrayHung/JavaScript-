@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <script>
+
+            window.onload=function(){
+                var allCheckBox=document.getElementById("allCheckBox");
+                var items = document.getElementsByName("items");
+
+                function correct_check(){
+                    count=0;
+                    for(var j=0;j<items.length;j++){
+                        if(items[j].checked==true)
+                        count++;
+                    }
+                    if(count==items.length){
+                        allCheckBox.checked=true;
+                        count = 0;}
+                    else{
+                        allCheckBox.checked=false;
+                        count = 0;
+                    }
+                }
+ /***********************************************************/ 
+//1.全選  
+                //1.      將按鈕綁定事件處理
+                var btn1=document.getElementById("btn1");
+                btn1.onclick=function(){  
+                //   2.      設置四個checkbox變成chekced狀態
+                //   2.a.    將四個checkbox節點抓出來
+                //2.b.    設置四個checkbox狀態
+                    for(var i=0;i<items.length;i++)
+                    {
+                        items[i].checked = true;
+                    }
+                    correct_check();
+                }
+/***********************************************************/
+//2.全不選 (和全選相同)
+                var btn2=document.getElementById("btn2");
+                btn2.onclick=function(){ 
+                    for(var i=0;i<items.length;i++)
+                    {
+                        items[i].checked = false;
+                    }
+                    correct_check();
+                }
+/***********************************************************/
+//3.反選
+                var btn3=document.getElementById("btn3");
+                btn3.onclick=function(){  
+                    for(var i=0;i<items.length;i++)
+                    {
+                        // if(items[i].checked == true)
+                            // items[i].checked = false;
+                        // else
+                        // items[i].checked = true;
+
+                        //聰明寫法 , 直接加!取反值
+                        items[i].checked = !items[i].checked;
+                    }
+                    correct_check()
+                }
+/***********************************************************/                
+//4.提交
+                var btn4=document.getElementById("btn4");
+                btn4.onclick=function(){ 
+                    for(var i=0;i<items.length;i++)
+                    {
+                        if(items[i].checked == true)
+                            alert(items[i].value);
+                    }
+                }
+/***********************************************************/
+//5.最上面的checkbox選了後,下面四個checkbox也全選或全不選    
+                /*  1.  先抓到checkbox , 綁定事件觸發函數
+                *   2.  如果checkbox==true , 設置下面四個chexkbox=true (狀態同步)
+                *       如果checkbox==false , 設置下面四個chexkbox=false
+                *       (用方法調用函數 , 故可以用this表達調用方法的對象)
+                */            
+               allCheckBox.onclick=function(){
+                    for(var i=0;i<items.length;i++)
+                    {
+                        items[i].checked = this.checked ;
+                    }
+               }
+/***********************************************************/ 
+//  6.  在每次按下面的checkbox後都要先判斷是否全選或全不選 , 進而改變上面checkbox的狀態 
+               /*   1.  將下面每個checkbox綁定事件處理函數
+                *   2.  if chexkbox==true的數量等於checkbox.length
+                *       則上面的checkbox=true
+                *       else
+                *           則上面的checkbox=false
+                */ 
+               //將下面的checkbox按鈕綁定事件
+                for(var i=0;i<items.length;i++){
+                    items[i].onclick=function(){
+                        correct_check();
+                    }
+                }
+/***********************************************************/ 
+            };
+        </script>
+    </head>
+    <body>
+        <form method="post" action="">
+            你愛好的運動?
+            <input type="checkbox" id="allCheckBox">全選/全不選
+            <br>
+            <input type="checkbox" name="items" value="足球">足球
+            <input type="checkbox" name="items" value="籃球">籃球
+            <input type="checkbox" name="items" value="羽毛球">羽毛球
+            <input type="checkbox" name="items" value="乒乓球">乒乓球
+            <br>
+
+            <input type="button" id="btn1" value="全選"/>
+            <input type="button" id="btn2" value="全不選"/>
+            <input type="button" id="btn3" value="反選"/>
+            <input type="button" id="btn4" value="提交"/>
+        </form>
+    </body>
+</html>
