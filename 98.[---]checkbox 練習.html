@@ -1,10 +1,12 @@
 <html>
     <head>
         <script>
-
+            
             window.onload=function(){
                 var allCheckBox=document.getElementById("allCheckBox");
                 var items = document.getElementsByName("items");
+
+
 
                 function correct_check(){
                     count=0;
@@ -99,6 +101,7 @@
                 }
 /***********************************************************/ 
             };
+            strchk();
         </script>
     </head>
     <body>
@@ -118,5 +121,8 @@
             <input type="button" id="btn3" value="反選"/>
             <input type="button" id="btn4" value="提交"/>
         </form>
+
+        <p>OUT 1 :SHORT</p>
+        <p>OUT 4 :OPEN</p>
     </body>
 </html>
