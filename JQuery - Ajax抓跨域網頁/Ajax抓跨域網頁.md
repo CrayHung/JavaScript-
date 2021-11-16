@@ -78,29 +78,29 @@ var finalUrl ="https://cors-anywhere.herokuapp.com/http://192.168.1.250/iostatus
 
 console會看到403的錯誤
 
-![image-20211112165614409](C:\Users\Cray.Hung\AppData\Roaming\Typora\typora-user-images\image-20211112165614409.png)
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\1.png)
 
 切到network(網路) , 知道是API 顯示的403錯誤
 
-![image-20211112165722709](C:\Users\Cray.Hung\AppData\Roaming\Typora\typora-user-images\image-20211112165722709.png)
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\2.png)
 
 點此紅色錯誤並選到response(回應) , 右鍵 open in new tab (在新分頁中開啟)
 
-![image-20211112170138590](C:\Users\Cray.Hung\AppData\Roaming\Typora\typora-user-images\image-20211112170138590.png)
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\3.png)
 
 cros-anywhere的聲明頁面，點選按鈕“request temporaty access to the demo server”
 
-![image-20211112170231904](C:\Users\Cray.Hung\AppData\Roaming\Typora\typora-user-images\image-20211112170231904.png)
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\4.png)
 
 跑出這一行文字，現在已經可以暫時使用這個server了
 
-![image-20211112170313982](C:\Users\Cray.Hung\AppData\Roaming\Typora\typora-user-images\image-20211112170313982.png)
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\5.png)
 
 回到原本存取API的頁面，再按一下重新整理就可以了
 
 ### 以 https://tw.yahoo.com/ 為例
 
-![image-20211112174706866](C:\Users\Cray.Hung\AppData\Roaming\Typora\typora-user-images\image-20211112174706866.png)
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\6.png)
 
 
 
@@ -146,7 +146,7 @@ cros-anywhere的聲明頁面，點選按鈕“request temporaty access to the de
 </html>
 ```
 
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\7.png)
 
-
-
+https://blog.huli.tw/2021/02/19/cors-guide-2/
 
