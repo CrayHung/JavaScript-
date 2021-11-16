@@ -78,7 +78,7 @@ var finalUrl ="https://cors-anywhere.herokuapp.com/http://192.168.1.250/iostatus
 
 console會看到403的錯誤
 
-![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\1.png)
+JQuery - Ajax抓跨域網頁/1.png
 
 切到network(網路) , 知道是API 顯示的403錯誤
 
