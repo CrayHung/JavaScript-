@@ -13,8 +13,9 @@
 
             function getHtml(){
                 var req = new XMLHttpRequest();
-                req.open("GET" , test_finalUrl);
+                req.open("GET" , finalUrl);
                 //req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                //req.setRequestHeader('Access-Control-Allow-Origin', 'XMLHttpRequest');
 
                 req.onload=function(){
                     if(req.status>=200 && req.status<400){
