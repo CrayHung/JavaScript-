@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script src="jquery-3.6.0.min.js"></script>
+        <style>
+        .setCor{
+            background-color: rgb(255, 127, 127);
+        }
+        .newCor{
+            background-color: black;
+        }
+        </style>
+
+    </head>
+    <body>
+        <p id="text">Hello</p>
+        <button onclick="addStyle()">增加class</button>
+        <button onclick="removeStyle()">移除class</button>
+        <button onclick="changeStyle()">改變class</button>
+        <button onclick="changeCss()">改變css</button>
+        <button onclick="changeChildrenStyle()">children()所有特定節點下的所有子節點</button>
+        <button onclick="findChild()">find()所有特定節點下的特定子節點(p)</button>
+        <button onclick="eachChild()">each()找出所有指定類型的節點</button>
+
+        <div>
+            <h1 >welcome</h1>
+            <div class="content">
+                <p>123</p>
+                <p>456</p>
+            </div>
+        </div>
+        <script>
+            $(window).resize(function(){
+	            console.log( "螢幕寬" + $(this).width() );
+	            console.log( "螢幕高" + $(this).height() );
+            });
+            console.log($("p").text());
+            $(".content").append("<h> 新增文字 數字 </h>");
+            //$(".content").remove();
+            $(".content").empty();
+            function addStyle(){
+                $("#text").addClass("setCor");   //增加class屬性setCor
+            }
+            function changeStyle(){
+                $("#text").toggleClass("newCor");   //切換class屬性newCor
+            }
+            function removeStyle(){
+                $("#text").removeClass();           //刪除class屬性
+            }
+            function changeCss(){                   //直接改css
+                $("#text").css('color','red');
+            }
+            function changeChildrenStyle(){
+                $("div").children().css('color','green');   //children()所有特定節點下的所有子節點
+            }
+            function findChild(){
+                $("div").find("p").css("background-color","red");//find()所有特定節點下的特定子節點(p)
+            }
+            function eachChild(){
+                $("p").each(function(){                     //each()找出所有指定類型的節點
+                    $(this).css("color","blue");
+                });
+            }
+        </script>
+    </body>
+</html>
