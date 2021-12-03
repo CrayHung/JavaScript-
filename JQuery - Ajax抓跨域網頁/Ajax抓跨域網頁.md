@@ -1,4 +1,4 @@
-## 問題 : 
+問題 : 
 
 ```
 ccess to XMLHttpRequest at http://192.168.1.250/iostatus.htm@admin:admin from origin http://127.0.0.1:5500 has been blocked by CORS policy: response to preflight request doesn't pass access control check: No 'Access-control-allow-origin' header is present on the requested resource
@@ -66,6 +66,12 @@ Access-Control-Allow-Origin: *
 
 - ## CORS Proxy (跨域代理伺服器)
 
+- ![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\7.png)
+
+  https://blog.huli.tw/2021/02/19/cors-guide-2/
+
+
+
 因為跨域限制是因為瀏覽器才有的 , 所以先透過非瀏覽器的方式取的API response , 加上該給的header通行證 , 再傳回給client端。
 
 使用cors-anywhere將 https://cors-anywhere.herokuapp.com/ 加在API URL前面就可以了
@@ -78,7 +84,7 @@ var finalUrl ="https://cors-anywhere.herokuapp.com/http://192.168.1.250/iostatus
 
 console會看到403的錯誤
 
-JQuery - Ajax抓跨域網頁/1.png
+![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\1.png)
 
 切到network(網路) , 知道是API 顯示的403錯誤
 
@@ -146,7 +152,5 @@ cros-anywhere的聲明頁面，點選按鈕“request temporaty access to the de
 </html>
 ```
 
-![](C:\Users\Cray.Hung\Desktop\JavaScript 筆記\JQuery - Ajax抓跨域網頁\7.png)
 
-https://blog.huli.tw/2021/02/19/cors-guide-2/
 

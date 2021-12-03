@@ -5,15 +5,22 @@
         <script src="jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
 
+<<<<<<< HEAD
             var corsURL = "https://cors-anywhere.herokuapp.com/";
             var apiURL = "http://192.168.1.250/iostatus.htm@admin:admin";
             var finalUrl ="https://cors-anywhere.herokuapp.com/http://192.168.1.250/iostatus.htm@admin:admin";
             var test_finalUrl ="https://cors-anywhere.herokuapp.com/https://www.google.com.tw/";
+=======
+            //var corsURL = "https://cors-anywhere.herokuapp.com/";
+            //var apiURL = "http://192.168.1.250/iostatus.htm@admin:admin";
+            //var finalUrl ="https://cors-anywhere.herokuapp.com/http://192.168.1.250/iostatus.htm@admin:admin";
+            var test_finalUrl ="https://cors-anywhere.herokuapp.com/https://tw.yahoo.com/";
+>>>>>>> 9e73fe9e18cd8ae2ba9f6ffb04e684303bee17c6
 
 
             function getHtml(){
                 var req = new XMLHttpRequest();
-                req.open("GET" , finalUrl);
+                req.open("GET" , test_finalUrl);
                 //req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 //req.setRequestHeader('Access-Control-Allow-Origin', 'XMLHttpRequest');
 

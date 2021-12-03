@@ -1,6 +1,6 @@
-window.onload = function(){
+/*window.onload = function(){
     
-
+//JS寫法
     function check(){
         var sign = 0;
         var allb = document.getElementsByTagName("b");
@@ -17,5 +17,25 @@ window.onload = function(){
     
     setInterval(check,1000);
 }
+*/
 
+/*JQuery寫法*/
+window.onload = function(){
+    function check(){
+        var sign=0;
 
+       
+            console.log( $("b").each);
+            /*
+             $("b").each(function(){
+            if($("b").innerText==("SHORT")){
+                console.log($(this));
+                sign=1;
+            }
+            
+            return sign;
+        });*/
+    } 
+//setInterval(check,1000);
+check();
+}

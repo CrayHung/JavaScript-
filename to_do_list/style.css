@@ -1,0 +1,38 @@
+body{
+    padding: 50px;
+}
+.content{
+    margin: 10px 0;
+}
+/*未勾選標題*/
+.title{
+    background-color: aqua;
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+/*已勾選標題*/
+.title2{
+    background-color: bisque;
+    text-decoration: line-through;
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+/*未勾選內容*/
+.message{
+    background-color: blanchedalmond;
+    padding: 10px 10px;
+}
+
+/*已勾選內容*/
+.message2{
+    background-color: brown;
+    text-decoration: line-through;
+    padding: 10px 10px;
+}
+
+.i_btn{
+    float:right;
+    margin: 1px;
+}
