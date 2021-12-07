@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    </html>
+    
+    <script>
+        /* 
+            總結:
+            1. constructor不一定要寫, 如果要加上初始設定才寫
+            2. 如果A類繼承B類 , 且A類中寫了constructor , 則要用super調用共同參數
+            3. 類中所定義的方法 , 都是放在類的原型對象上 , 供實例使用
+
+        */
+
+
+        //創建一個Person類
+        class Person{
+            //構造器中的this指的是class的實例對象(p1.p2)
+            constructor(name,age){
+                this.name=name
+                this.age=age
+            }
+            //此speak()方法放在類的原型__proto__上, 供實例使用
+            //通過Person調用speak()方法, speak中的this就是Person實例
+            speak(){
+                console.log(`我是${this.name} 我今年${this.age}歲`)
+            }
+
+        }
+
+        //創建一個Student類 , 繼承於Person類
+        class Student extends Person{
+            /*
+                子類可以直接用父類的構造器,方法
+                但如果傳入的參數和父類不一樣
+                則要重新寫構造器
+
+                但如果有共有的參數
+                則通過super來接..如下所示
+
+            */
+           constructor(name,age,grade){
+               super(name,age)
+               this.grade=grade
+           }
+           //重寫從父類繼承過來的方法
+           speak(){
+            console.log(`我是${this.name} 我今年${this.age}歲 我讀${this.grade}年級`)
+           }
+           /*
+            此study()方法放在類的原型__proto__上, 供實例使用
+            通過Student調用study()方法, study中的this就是Student實例
+            */
+           study(){
+               console.log('我很認真學習')
+           }
+
+        }
+        const p1 = new Person('tom',18)
+        const p2 = new Person('Eric',20)
+        const s1 = new Student('mary',19,'高一')
+
+        p1.speak()
+        p2.speak()
+        /*
+            如果子類沒有speak方法,就會去找父類的speak
+            但會遺失高一的資料,所以應該是要重寫子類的speak
+        */
+        s1.speak()
+        s1.study()
+    </script>

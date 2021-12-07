@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/> 
+        <meta content="width=device.width, initial-scale=1.0"/>
+        <title>類式組件</title>
+    </head>
+    <body>
+        <div id="test">
+        </div>
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel" >
+
+        //創建類式組件
+       class MyComponent extends React.Component{
+           //此render()方法放在MyComponent的原型__proto__上, 供實例使用(此實例為react創建)
+           //此render()中的this是誰?----MyComponent的實例對象===MyComponent組件實例對象
+           //此實例中包含三個重要屬性
+           // props   refs    state
+           render(){
+            console.log(this)
+            return <h2> 用類定義的組件(適用於複雜模式的組件)</h2>
+            }
+       }
+       //渲染組件到頁面
+        ReactDOM.render( <MyComponent/> , document.getElementById('test'))
+        /*
+            當執行了ReactDOM.render( <MyComponent/>.....之後發生了什麼?
+            1.  React解析組件標籤 , 找到MyComponent組件
+            2.  發現該組件是用類定義的 , 隨後new出來該類的實例 , 
+                並透過該實例調用到原型上的render方法
+            3.將render返回的虛擬DOM轉為真實DOM , 呈現在頁面上
+        */
+    </script>
+
+    </body>
+</html>

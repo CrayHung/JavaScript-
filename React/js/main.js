@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("ReactDOM.render( /*#__PURE__*/React.createElement(\"h1\", null, \" 444Hello React!!!!!! \"), document.getElementById('root'));\n\n//# sourceURL=webpack://react/./jsx/main.jsx?");
+eval("//模擬數據\nvar data = [\"f1\", \"g2\", \"h3\"];\nvar VDOM = /*#__PURE__*/React.createElement(\"div\", null, /*#__PURE__*/React.createElement(\"h2\", null, \"\\u64CD\\u4F5C\\u4ECB\\u9762\"), /*#__PURE__*/React.createElement(\"ul\", null, data.map(function (item, index) {\n  return /*#__PURE__*/React.createElement(\"li\", {\n    key: index\n  }, \" \", item, \" \");\n})));\nReactDOM.render(VDOM, document.getElementById('root'));\n\n//# sourceURL=webpack://react/./jsx/main.jsx?");
 
 /***/ })
 
