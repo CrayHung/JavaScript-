@@ -21,13 +21,17 @@
                 this.state = {isHot:false}
             }
            render(){
-            
-            return <h2> 今天天氣很{this.state.isHot ? '炎熱' : '涼爽'} </h2>
+            const {isHot} = this.state
+            return <h2 onClick={demo}> 今天天氣很{isHot ? '炎熱' : '涼爽'} </h2>
             }
        }
        //渲染組件到頁面
         ReactDOM.render( <Weather/> , document.getElementById('test'))
         
+        function demo(){
+                console.log('案了h2標籤')
+            }
+            
     </script>
 
     </body>
